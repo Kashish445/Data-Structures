@@ -26,9 +26,8 @@ if breaks <= 1:
 return False
 
 Solution 2:
-nums1=sorted(nums)
+num1=sorted(nums)
 for i in range(len(nums)):
-    nums.insert(nums.pop(),nums[0])
-    if nums==nums1:
+    if nums[i:]+nums[:i]==num1:
         return True
 return False
