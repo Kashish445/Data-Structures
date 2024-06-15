@@ -1,0 +1,17 @@
+#find the second largest element in an array
+
+#Logic:
+Condition :
+Check with the element is greater than both the taken and then if it lies in between
+
+max = arr[0]
+s_max = -1
+for i in range(n):
+    if arr[i]>max:
+        s_max = max
+        max = arr[i]
+    elif s_max<arr[i] and arr[i] != max:
+         s_max = arr[i]
+
+return s_max 
+        
