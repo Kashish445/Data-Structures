@@ -1,0 +1,8 @@
+def insert(root,key):
+    if root is None:
+        return Node(key)
+    if root.val<key:
+        root.right=insert(root.right,key)
+    else:
+        root.left=insert(root.left,key)
+    return root
