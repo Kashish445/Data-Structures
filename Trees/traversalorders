@@ -1,0 +1,20 @@
+# A function to do inorder tree traversal
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.val, end=" ")
+        inorder(root.right)
+
+# A function to do preorder tree traversal
+def preorder(root):
+    if root:
+        print(root.val, end=" ")
+        preorder(root.left)
+        preorder(root.right)
+
+# A function to do postorder tree traversal
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.val, end=" ")
