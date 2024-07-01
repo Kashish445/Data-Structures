@@ -18,3 +18,17 @@ def postorder(root):
         postorder(root.left)
         postorder(root.right)
         print(root.val, end=" ")
+
+
+#level order
+def level(root):
+    if root is None:
+        return
+    queue=deque([root])
+    while queue:
+        k=queue.popleft()
+        print(k.val)
+        if k.left:
+            queue.append(k.left)
+        if k.right:
+            queue.append(k.right)
