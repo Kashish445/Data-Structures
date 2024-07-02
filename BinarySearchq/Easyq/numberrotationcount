@@ -1,0 +1,51 @@
+
+Given an ascending sorted rotated array arr of distinct integers of size n. The array is right-rotated k times. Find the value of k.
+
+Example 1:
+
+Input:
+n = 5
+arr[] = {5, 1, 2, 3, 4}
+Output: 1
+Explanation: The given array is 5 1 2 3 4. 
+The original sorted array is 1 2 3 4 5. 
+We can see that the array was rotated 
+1 times to the right.
+
+
+
+low = 0
+high = len(arr) - 1
+ans = float('inf')
+index = -1
+while low <= high:
+    mid = (low + high) // 2
+
+    # If search space is already sorted,
+    # then arr[low] will always be
+    # the minimum in that search space
+    if arr[low] <= arr[high]:
+        if arr[low] < ans:
+            index = low
+            ans = arr[low]
+        break
+
+    # If left part is sorted
+    if arr[low] <= arr[mid]:
+        # Keep the minimum
+        if arr[low] < ans:
+            index = low
+            ans = arr[low]
+
+        # Eliminate left half
+        low = mid + 1
+    else:  # If right part is sorted
+        # Keep the minimum
+        if arr[mid] < ans:
+            index = mid
+            ans = arr[mid]
+
+        # Eliminate right half
+        high = mid - 1
+
+return index
