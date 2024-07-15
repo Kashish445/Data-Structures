@@ -1,0 +1,16 @@
+start = 1
+end = sum(candies) // k
+
+while start <= end:
+    middle = (start + end) // 2
+    total_children_needed = 0
+    
+    for candy in candies:
+        total_children_needed += candy // middle
+    
+    if total_children_needed >= k:
+        start = middle + 1
+    else:
+        end = middle - 1
+
+return end
