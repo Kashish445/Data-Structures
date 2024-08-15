@@ -1,0 +1,15 @@
+k=4973
+p=3317
+k=list(str(k))
+print(k)
+p=list(str(p))
+c=0
+for i in range(len(k)-1,-1,-1):
+    t=int(p[i])+int(k[i])
+    if t>9:
+        c+=1
+        t=1
+        print(t)
+    else:
+        t=0
+print(c)
